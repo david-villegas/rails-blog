@@ -1,16 +1,19 @@
-= form_for @post do |f|
-  - if @post.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@post.errors.count, "error")} prohibited this post from being saved:"
+= form_with(model: post, local: true) do |form|
+  -if post.errors.any?
+    #error_explanation.alert.alert-danger.alert-dismissible.fade.show
+      %button.close{ 'data-dismiss': 'alert' }
+        %span x
+      %h4= "#{pluralize(post.errors.count, "error")} al guardar el post"
       %ul
-        - @post.errors.full_messages.each do |message|
+        -post.errors.full_messages.each do |message|
           %li= message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :body
-    = f.text_area :body
+  .form-group
+    = form.label :title
+    = form.text_field :title, class: 'form-control'
+  .form-group
+    = form.label :body
+    = form.text_area :body, class: 'form-control'
   .actions
-    = f.submit 'Save'
+    = form.submit 'Guardar', class: 'btn btn-primary'
+%br/

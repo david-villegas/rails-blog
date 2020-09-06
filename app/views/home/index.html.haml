@@ -1,2 +1,23 @@
-%h1 Home#index
-%p Find me in app/views/home/index.html.haml
+.jumbotron.text-center.bg-white
+  %h1 Hello, World!
+  %p{class: 'lead'}Guide you step by step learning Ruby on Rails through building a Blog application.
+  %br/
+  %a{href:'https://fullstackrubyonrails.com', class: 'btn btn-primary btn-lg', role:'button', target:'_blank'}Learn more
+
+.posts.pb-md-4
+  .container
+    .row
+      - @posts.each do |post|
+        %section{class: 'col-md-4'}
+          .card.mb-4
+            .card-body
+              %h5=post.title
+              .card-text
+                %p=post.body.truncate(100)
+                %a{href: post_path(post.id), class:'btn btn-primary'}Leer Mas...
+
+.container
+  .row.justify-content-center
+    = will_paginate @posts
+
+= link_to 'Ver Posts', posts_path, class: 'btn btn-primary mb-3'

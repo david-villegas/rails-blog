@@ -1,6 +1,6 @@
-%h1 Listing posts
+%h1 Posts
 
-%table
+%table{class: 'table table-hover'}
   %thead
     %tr
       %th Title
@@ -14,10 +14,14 @@
       %tr
         %td= post.title
         %td= post.body
-        %td= link_to 'Show', post
-        %td= link_to 'Edit', edit_post_path(post)
-        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Show', post, class: 'btn btn-primary btn-sm'
+        %td= link_to 'Edit', edit_post_path(post), class: 'btn btn-success btn-sm'
+        %td= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm'
 
 %br
 
-= link_to 'New Post', new_post_path
+.container
+  .row.justify-content-center
+    = will_paginate @posts
+
+= link_to 'New Post', new_post_path, class: 'btn btn-primary mb-3'
