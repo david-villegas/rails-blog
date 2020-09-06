@@ -10,4 +10,26 @@
     -# = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+
+    -# Header
+    %header
+      %nav{class: 'navbar bg-dark'}
+        .container
+          %a{href: root_path, class:'navbar-brand'}
+            = image_tag '', class: ''
+            %strong{class:'name'}Blog
+
+    -# Main Content
+    %main{class: 'container'}
+      = yield
+
+    -# Footer
+    %footer{class: 'p-4 bg-light'}
+      .container.text-muted
+        %p 2020 @ Blog
+        %p{class: 'float-right'}
+          %a(href="#")Back to Top
+        %p
+          Visit the
+          %a{href: 'https://fullstackrubyonrails.com'} FullstackRubyonRails
+          %span to learn more!
