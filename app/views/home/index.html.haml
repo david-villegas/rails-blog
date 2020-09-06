@@ -10,6 +10,9 @@
       - @posts.each do |post|
         %section{class: 'col-md-4'}
           .card.mb-4
+            -if post.cover_photo.attached?
+              .card-img-top
+                = image_tag (post.cover_photo), class: 'img-fluid'
             .card-body
               %h5=post.title
               .card-text

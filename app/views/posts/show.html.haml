@@ -1,11 +1,13 @@
-%p#notice= notice
-
 %p
   %b Title:
   = @post.title
 %p
   %b Body:
   = @post.body
+- if @post.cover_photo.attached?
+  %p
+    %strong Cover Photo:
+    = image_tag(@post.cover_photo)
 
 = link_to 'Edit', edit_post_path(@post), class: 'btn btn-success mb-4'
 \|
