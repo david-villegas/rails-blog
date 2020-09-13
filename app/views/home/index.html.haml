@@ -16,7 +16,7 @@
             .card-body
               %h5=post.title
               .card-text
-                %p=post.body.truncate(100)
+                %p=truncate(strip_tags(post.rich_text_content.to_s), length: 100)
                 %a{href: post_path(post.id), class:'btn btn-primary'}Leer Mas...
 
 .container

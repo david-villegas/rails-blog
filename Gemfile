@@ -33,6 +33,8 @@ gem 'devise', ">= 4.7.2"
 gem 'pg'
 gem "aws-sdk-s3", require: false
 gem 'will_paginate-bootstrap4'
+gem "mini_magick"
+gem 'image_processing'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
