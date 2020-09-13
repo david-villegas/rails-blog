@@ -13,10 +13,13 @@
     = form.text_field :title, class: 'form-control'
   .form-group
     = form.label :body
-    = form.rich_text_area :body, class: ''
+    = form.rich_text_area :body, class: 'form-control'
   -# .form-group
   -#   = form.label :cover_photo
   -#   = form.file_field :cover_photo, class: 'form-control'
   .actions
-    = form.submit 'Guardar', class: 'btn btn-primary'
+    - if action_name == 'new'
+      = form.submit 'Guardar', class: 'btn btn-primary'
+    -else
+      = form.submit 'Actualizar', class: 'btn btn-primary'
 %br/
