@@ -3,7 +3,7 @@
     #error_explanation.alert.alert-danger.alert-dismissible.fade.show
       %button.close{ 'data-dismiss': 'alert' }
         %span x
-      %h4= "#{pluralize(post.errors.count, "error")} al guardar el post"
+      %h4= "#{pluralize(post.errors.count, "Error")} al guardar el post"
       %ul
         -post.errors.full_messages.each do |message|
           %li= message
@@ -18,8 +18,8 @@
   -#   = form.label :cover_photo
   -#   = form.file_field :cover_photo, class: 'form-control'
   .actions
-    - if action_name == 'new'
-      = form.submit 'Guardar', class: 'btn btn-primary'
-    -else
+    - if action_name == 'edit'
       = form.submit 'Actualizar', class: 'btn btn-primary'
+    -else
+      = form.submit 'Guardar', class: 'btn btn-primary'
 %br/
