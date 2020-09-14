@@ -19,7 +19,11 @@
   -#   = form.file_field :cover_photo, class: 'form-control'
   .actions
     - if action_name == 'edit'
-      = form.submit 'Actualizar', class: 'btn btn-primary'
+      = form.submit 'Update', class: 'btn btn-primary'
+      \|
+      = link_to 'Cancel', @post, class: 'btn btn-danger'
     -else
-      = form.submit 'Guardar', class: 'btn btn-primary'
+      = form.submit 'Save', class: 'btn btn-primary'
+      \|
+      = link_to 'Cancel', posts_path, class: 'btn btn-danger'
 %br/

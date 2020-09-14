@@ -8,8 +8,8 @@
   .container
     .row
       - @posts.each do |post|
-        %section{class: 'col-md-4'}
-          .card.mb-4
+        %section{class: 'col-md-4 py-2'}
+          .card.border-primary.mb-4.h-100
             -if post.body.embeds.present?
               .card-img-top
                 = image_tag (post.body.embeds.first), class: 'img-fluid'

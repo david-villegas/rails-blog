@@ -10,6 +10,7 @@ require("channels")
 
 import "bootstrap"
 import "../stylesheets/application"
+import "../trix-editor-overrides"
 
 document.addEventListener("turbolinks:load", () => {
   $('[data-toggle="tooltip"]').tooltip()
