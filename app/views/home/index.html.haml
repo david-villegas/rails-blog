@@ -6,7 +6,7 @@
 
 .posts.pb-md-4
   .container
-    .row
+    .row.justify-content-around
       - @posts.each do |post|
         %section{class: 'col-md-4 py-2'}
           .card.bg-light.border-info.mb-4.shadow.h-100
