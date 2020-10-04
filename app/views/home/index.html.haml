@@ -9,18 +9,19 @@
     .row
       - @posts.each do |post|
         %section{class: 'col-md-4 py-2'}
-          .card.border-primary.mb-4
-            -if post.body.embeds.present?
-              .card-img-top
-                = image_tag (post.body.embeds.first), class: 'img-fluid'
-            .card-body
-              %h5=post.title
+          .card.bg-light.border-info.mb-4.shadow.h-100
+            -# -if post.body.embeds.present?
+            -#   .card-img-top
+            -#     = image_tag (post.body.embeds.first), class: 'img-fluid'
+            .card-body.text-secondary
+              %h5{class: 'card-title'}=post.title
               .card-text
-                %p=truncate(strip_tags(post.rich_text_body.to_s), length: 100)
-                %a{href: post_path(post.id), class:'btn btn-primary'}Leer Mas...
+                %p=truncate(strip_tags(post.rich_text_body.to_s), length: 150)
+            .card-footer.text-right
+              %a{href: post_path(post.id), class:'btn btn-info'}Leer Mas...
 
 .container
   .row.justify-content-center
     = will_paginate @posts
 
-= link_to 'Ver Posts', posts_path, class: 'btn btn-primary mb-3'
+-# = link_to 'Ver Posts', posts_path, class: 'btn btn-primary mb-3'

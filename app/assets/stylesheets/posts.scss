@@ -1,0 +1,22 @@
+.blog-page{
+  max-width: 880px;
+  margin: 0 auto;
+  padding-top: 10px;
+  background-color: #e6e6e6;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 2.25rem;
+  margin-top: 25px;
+
+  .blog {
+    padding: 40px 70px;
+    img{
+      border-radius: 8px;
+    }
+    .title {
+      font-size: 34px;
+      font-weight: bold;
+      padding-bottom: 30px;
+    }
+  }
+}
